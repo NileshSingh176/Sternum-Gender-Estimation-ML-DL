@@ -1,5 +1,3 @@
-An end-to-end forensic AI system that automates gender estimation from sternum anatomical measurements using both classical machine learning and deep learning techniques.
-
 # 🦴 Gender Estimation Using Sternum Measurements
 ### (Machine Learning + Deep Learning Approach | Forensic AI Project)
 
@@ -20,35 +18,35 @@ The dataset was obtained from a hospital under restricted academic usage and con
 
 ## 🧾 Dataset Description
 
-- Total Samples: 150
-- Features: 12 anatomical measurements
+- Total Samples: 150  
+- Features: 12 anatomical measurements  
 - Target Variable: Gender (Male / Female)
 
 ### Key Anatomical Features:
 
-- Manubrium Length (ML)
-- Mesosternum Length (BL)
-- Manubrium Width (MW)
-- Sternum Width 1 (SW1)
-- Sternum Width 2 (SW2)
-- Total Sternum Length (TSL)
-- Sternal Index (M/B × 100)
-- Sternal Area
-- Age
+- Manubrium Length (ML)  
+- Mesosternum Length (BL)  
+- Manubrium Width (MW)  
+- Sternum Width 1 (SW1)  
+- Sternum Width 2 (SW2)  
+- Total Sternum Length (TSL)  
+- Sternal Index (M/B × 100)  
+- Sternal Area  
+- Age  
 
 These measurements are based on forensic anatomical principles including Hyrtl’s Law.
 
-⚠️ Due to privacy and institutional restrictions, the dataset is not publicly shared.
+⚠️ Dataset is private due to institutional restrictions.
 
 ---
 
 # 🛠 Methodology
 
 ## 1️⃣ Data Preprocessing
-- Handling structured measurement data
-- Feature scaling using:
-  - MinMaxScaler
-  - StandardScaler
+- Handling structured measurement data  
+- Feature scaling using:  
+  - MinMaxScaler  
+  - StandardScaler  
 - Train-test split
 
 ---
@@ -57,35 +55,41 @@ These measurements are based on forensic anatomical principles including Hyrtl�
 
 Multiple classification algorithms were evaluated:
 
-- Logistic Regression
-- Support Vector Machine (SVM)
-- K-Nearest Neighbors
-- Decision Tree
-- Random Forest
-- AdaBoost
+- Logistic Regression  
+- Support Vector Machine (SVM)  
+- K-Nearest Neighbors  
+- Decision Tree  
+- Random Forest  
+- AdaBoost  
 
-### Best ML Performance:
-- Accuracy: **83.33%**
-- Achieved using MinMaxScaler
-- Strong precision across multiple classifiers
+### Best ML Performance
+- Accuracy: **83.33%**  
+- Achieved using MinMaxScaler  
+- Strong precision across multiple classifiers  
+
+**Machine Learning Notebooks:**  
+- [StandardScaler.ipynb](Machine_Learning/StandardScaler.ipynb)  
+- [MinMaxScaler.ipynb](Machine_Learning/MinMaxScaler.ipynb)  
 
 ---
 
 # 🧠 Deep Learning Implementation
 
-A fully connected neural network was implemented for structured data classification.
-
-Two preprocessing techniques were tested:
+A fully connected CNN model for structured data classification. Two preprocessing techniques were tested:
 
 ### CNN + MinMaxScaler
-- Test Accuracy: **83.33%**
+- Test Accuracy: **83.33%**  
 - Test Loss: 0.3459
 
 ### CNN + StandardScaler
-- Test Accuracy: **83.33%**
+- Test Accuracy: **83.33%**  
 - Test Loss: 0.4668
 
-MinMaxScaler demonstrated better optimization stability with lower loss.
+MinMaxScaler showed better optimization stability with lower loss.
+
+**Deep Learning Notebooks:**  
+- [CNN_Standard_Scaler.ipynb](Deep_Learning/CNN_Standard_Scaler.ipynb)  
+- [CNN_Min__Max_Scaler.ipynb](Deep_Learning/CNN_Min__Max_Scaler.ipynb)  
 
 ---
 
@@ -100,63 +104,28 @@ Both classical ML and Deep Learning approaches performed competitively.
 
 ---
 
-
 ## 📁 Repository Structure
 
-```
 Sternum-Gender-Estimation-ML-DL/
 │
-├── notebooks/
-│   ├── ML_MinMaxScaler.ipynb
-│   ├── ML_StandardScaler.ipynb
-│   ├── DL_MinMaxScaler.ipynb
-│   └── DL_StandardScaler.ipynb
+├── Machine_Learning/       # Notebooks for classical ML experiments
+│   ├── StandardScaler.ipynb
+│   └── MinMaxScaler.ipynb
 │
-├── models/
-│   ├── best_ml_model.pkl
-│   └── best_dl_model.h5
+├── Deep_Learning/          # Notebooks for CNN-based deep learning experiments
+│   ├── CNN_Standard_Scaler.ipynb
+│   └── CNN_Min__Max_Scaler.ipynb
 │
-├── requirements.txt
-└── README.md
-```
-
----
-
-# 🔬 Key Insights
-
-- Feature scaling significantly impacts model performance.
-- MinMaxScaler outperformed StandardScaler in both ML and DL pipelines.
-- Structured anatomical measurements can effectively predict gender.
-- Classical ML models can perform comparably to deep learning in small structured datasets.
-
----
-
-# 🚀 Why This Project is Strong
-
-✔ Real hospital-based dataset  
-✔ Forensic anthropology application  
-✔ Multiple ML algorithm comparison  
-✔ Preprocessing experimentation  
-✔ Deep Learning implementation  
-✔ Performance evaluation and analysis  
-
----
-
-# 🌍 Real-World Applications
-
-- Forensic investigations
-- Disaster victim identification
-- Skeletal remains analysis
-- Medico-legal cases
-
----
-
-# 👨‍💻 Author
-
-Nilesh Singh  
-B.Tech CSE (AI & ML)  
-Machine Learning | Deep Learning | Medical AI  
-
-LinkedIn: https://www.linkedin.com/in/nilesh-singh-991a86290/
-
----
+├── data/                   # Dataset used for experiments
+│   └── hospital.csv
+│
+├── docs/                   # Thesis charts and additional documentation
+│   └── thesis master chart.xlsx
+│
+├── visuals/                # Generated plots and visual outputs
+│   └── normal.png
+│
+├── README.md               # Project overview and instructions
+├── LICENSE                 # License file
+├── .gitignore              # Git ignore rules
+└── requirements.txt        # Python dependencies
